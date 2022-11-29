@@ -4,3 +4,16 @@ let pokemonList = [
     {name: 'Zubat', height: 2.7, category:'bat', type:['poison','fly']},
     {name:'Vulpix', height: 2, category:'fox', type:'fire'}
 ];
+
+//iterating through objects in array creatong a loop
+
+for (let i= 0; i< pokemonList.length; i++) {
+    if (pokemonList[i].height >2 ) {
+        document.write(pokemonList[i].name + pokemonList[i].height + ' meters tall' + ' You caught the big one!')
+
+    } else if (pokemonList[i].height > 1 && pokemonList[i].height < 2.1) {
+        document.write(pokemonList[i].name + pokemonList[i].height + ' meters tall')
+    } else {
+        document.write (pokemonList[i].name + pokemonList[i].height + ' meters tall' + 'that is small pokemon')
+    }  
+}
