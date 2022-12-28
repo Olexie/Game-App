@@ -1,9 +1,11 @@
 *{
     font-family:'latio', sans-serif;
     font-weight:300;
-    fony-size: 15pt;
+    font-size: 15pt;
 }
 
 h1{
-    font-weight: 700
+    font-weight: 700;
+    font-size: 26pt;
 }
+
