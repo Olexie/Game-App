@@ -1,13 +1,25 @@
+let pokemonRepository = (function(){
 let pokemonList = [
     {name:'Charmander', height: 2, category: 'lizard', type:'fire'},
     {name: 'Squirtle', height: 1.8, category:'turtle', type:'water'},
     {name: 'Zubat', height: 2.7, category:'bat', type:['poison','fly']},
     {name:'Vulpix', height: 2, category:'fox', type:'fire'}
 ];
+ function getAll (){
+    return pokemonList;
+ } 
+ function add (pokemon) {
+    pokemonList.push(pokemon);
+ }
+ return {
+    add: add,
+    getAll: getAll,
+ };
+})();
 
 //iterating through objects in array creatong a loop
 
-pokemonList.forEach (function(pokemon) {
+pokemonRepository.getAll().forEach (function(pokemon) {
     if (pokemon.height >2 ) {
         document.write(pokemon.name + ' '+ pokemon.height + ' meters tall' + ' You caught the big one!' + '<br>')
 
