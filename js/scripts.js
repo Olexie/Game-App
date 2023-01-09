@@ -1,4 +1,4 @@
-let pokemonRepository = (function(){
+const pokemonRepository = (function(){
 let pokemonList = [
     {name:'Charmander', height: 2, category: 'lizard', type:'fire'},
     {name: 'Squirtle', height: 1.8, category:'turtle', type:'water'},
@@ -9,13 +9,30 @@ let pokemonList = [
     return pokemonList;
  } 
  function add (pokemon) {
-    pokemonList.push(pokemon);
+   if(
+    typeof pokemon === "object" && JSON.stringify(Object.keys(pokemon)) ===
+    JSON.stringify(['name', 'height', 'category', 'type'])
+   ) { pokemonList.push(pokemon);
+   } else {
+    alert ('object error');
+   }
  }
+  function findByName (name){
+    return pokemonList.find (function(pokemon){
+    return pokemon.name === name;
+  });
+}
+
  return {
     add: add,
     getAll: getAll,
+    findByName: findByName,
  };
 })();
+
+//adding extra pokemon
+
+pokemonRepository.add ({name:'Raichu', height: 2.07, category: 'mouse', type:'electric'});
 
 //iterating through objects in array creatong a loop
 
@@ -29,6 +46,8 @@ pokemonRepository.getAll().forEach (function(pokemon) {
         document.write (pokemon.name + ' '+ pokemon.height + ' meters tall' + 'that is small pokemon' + '<br>')
     }  
 });
+
+console.log(pokemonRepository.findByName('Raichu'));
 
 /*for (let {height, name} of pokemonList) {
 if (height>2) {
