@@ -22,29 +22,44 @@ let pokemonList = [
     return pokemon.name === name;
   });
 }
+function addListItem(pokemon){
+    let pokemonList = document.querySelector('.pokemon-list');
+    let listPokemon = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add ('button-class');
+    listPokemon.appendChild(button);
+    pokemonList.appendChild(listPokemon);
+
+}
 
  return {
     add: add,
     getAll: getAll,
     findByName: findByName,
+    addListItem: addListItem,
  };
 })();
 
 //adding extra pokemon
 
-pokemonRepository.add ({name:'Raichu', height: 2.07, category: 'mouse', type:'electric'});
+pokemonRepository.add ({name:'Raichu', height: 2.07, category: 'mouse', type:['electric']});
 
-//iterating through objects in array creatong a loop
+//iterating through objects in array creating a loop
+
 
 pokemonRepository.getAll().forEach (function(pokemon) {
-    if (pokemon.height >2 ) {
+
+    pokemonRepository.addListItem(pokemon);
+
+    /*if (pokemon.height >2 ) {
         document.write(pokemon.name + ' '+ pokemon.height + ' meters tall' + ' You caught the big one!' + '<br>')
 
     } else if (pokemon.height > 1 && pokemon.height < 2.1) {
         document.write(pokemon.name + ' '+ pokemon.height + ' meters tall' + '<br>')
     } else {
         document.write (pokemon.name + ' '+ pokemon.height + ' meters tall' + 'that is small pokemon' + '<br>')
-    }  
+    }  */
 });
 
 console.log(pokemonRepository.findByName('Raichu'));

@@ -9,4 +9,18 @@ h1{
     font-size: 26pt;
 }
 
-
+.button-class {
+background-color: #FEE715FF;
+border:none;
+color: black;
+padding: 20px 20px;
+text-align: center;
+text-decoration: none;
+transition-duration: 0.9;
+transition: opacity;
+cursor:pointer;
+border: none;
+font-family: inherit;
+margin: 20px 20px;
+font-size: 32px;
+}
