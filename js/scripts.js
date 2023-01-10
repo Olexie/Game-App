@@ -31,6 +31,16 @@ function addListItem(pokemon){
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
 
+    //adding an event listener to buttons which reacts on click
+    button.addEventListener ('click', function(event){
+        showDetails(pokemon);
+    });
+
+}
+
+
+function showDetails (pokemon) {
+    console.log(pokemon);
 }
 
  return {
