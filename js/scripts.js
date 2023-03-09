@@ -2,30 +2,46 @@
 const pokemonRepository = (function(){
 let pokemonList = [];
 let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150'
-let modalContainer = document.querySelector ('#modal-container');
-let modal = document.createElement ('div');
-let closeButtonElement = document.createElement ('button');
-let titleElement = document.createElement('h1');
-let contentElement = document.createElement('p');
+//let modalContainer = document.querySelector ('#modal-container');
+//let modal = document.createElement ('div');
+//let closeButtonElement = document.createElement ('button');
+//let titleElement = document.createElement('h1');
+//let contentElement = document.createElement('p');
 
 function showModal (pokemon){
-    modalContainer.innerHTML = '';
-    modal.innerHTML = '';
-    modal.classList.add('modal');
-    closeButtonElement.innerText = 'close';
-    closeButtonElement.addEventListener('click', hideModal);
-    titleElement.innerText = pokemon.name;
-    contentElement.innerText = 'Height:${pokemon.height}';
-    let image = document.createElement('img');
-    image.src = pokemon.imageURL;
-    image.width = 200;
-    image.alt = pokemon.name;
+   // modalContainer.innerHTML = '';
+    //modal.innerHTML = '';
+    //modal.classList.add('modal');
+    //closeButtonElement.innerText = 'close';
+    //closeButtonElement.addEventListener('click', hideModal);
+    //titleElement.innerText = pokemon.name;
+    //contentElement.innerText = 'Height:${pokemon.height}';
+    //let image = document.createElement('img');
+    //image.src = pokemon.imageURL;
+    //image.width = 200;
+    //image.alt = pokemon.name;
+    let modalBody =$('.modal-body');
+    let modalTitle = $('.modal-title');
+    let modalHeadder = $ ('.modal-header');
 
-    modal.appemdChild(closeButtonElement);
-    modal.appendChild(titleElement);
-    modal.appendChild(contentElement);
-    modal.appendChild(image);
-    modalComtainer.appendChild(modal);
+    modalTitle.empty();
+    modalBody.empty();
+
+    let pokemonName = $("<h1>" + pokemon.name +"</h1>");
+    let pokemonImageFront = $ ('<img class="moda-img" style="width=50%">');
+    pokemonImageFront.attr("src", pokemon.imageUrlFront);
+    let epokemonHeight = $("<p>" + "height: " +pokemon.height + "</p>");
+
+    modalTitle.append(pokemonName);
+    modalBody.append(pokemonImage);
+    modalBody.append(pokemonHeight);
+
+
+    //modal.appemdChild(closeButtonElement);
+    //modal.appendChild(titleElement);
+   // modal.appendChild(contentElement);
+   // modal.appendChild(image);
+   // modalComtainer.appendChild(modal);
 
 
     function hideModal(){
