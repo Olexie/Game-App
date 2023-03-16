@@ -15,33 +15,47 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+ <link rel="stylesheet" type="text/css" href="css/styles.css">
 
 </head>
-
-<body>
-
-    <nav class="navbar navbar-dark bg-primary">
-        <a class="navbar-brand" href="#"> Pokemon Game App</a>
-
-    </nav>
-
-   <!-- <header class="page-header">
+ <body>
+    <header class="page-header">
+        <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-primary">
+         <a class="navbar-brand" href="#"> Pokemon Game App</a>
+         <button class="navbar-toggler" type="button" data-target="#myModal" 
+         data-toggler="modal" aria-controls="navbarNav" aria-expanded="false"
+         aria-label="toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">current</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+            </ul>
+         </div>
+        </nav>
+    </header>
         
-        <h1> Pokemon Game App</h1>
-        <ul class="pokemon-list"></ul>
-        
-    </header>-->
     <h1> Pokemon Game App </h1>
     <ul class="pokemon-list container">
     </ul>
+    
 
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+   <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
         Launch demo modal
-      </button>
+      </button>-->
       
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <!-- Modal-->
+      
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -59,7 +73,7 @@
             </div>
           </div>
         </div>
-      </div>
+      
 
     <!-- <button id="show-modal">Show Modal</button>
      <div id="modal- container"></div>-->
