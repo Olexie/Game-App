@@ -92,3 +92,9 @@ ul {
     left: 0;
     position: fixed;
 }
+.logo-pokeball{
+    position: relative;
+    height: 40px;
+    cursor: pointer;
+    padding-bottom: 10px;
+}
