@@ -22,6 +22,8 @@ function add (pokemon) {
     let button = document.createElement('button');
     button.innerText = pokemon.name;
     button.classList.add ('btn');
+    button.classList.add('pokemon-button');
+    button.classList.add('textStr');
     pokemonList.appendChild(listPokemon);
     listPokemon.appendChild(button);
 
@@ -100,6 +102,22 @@ function hideModal(){
         hideModal();
     }
  });
+
+let allPokemon = []
+
+function searchFunction(e) {
+    const queryString= e.target.value
+    if (!allPokemon.length) allPokemon = document.querySelectorAll("li.group-list-item");
+    allPokemon.forEach(pokemon => {
+        // if the selected letters found in the pokemon name they will be visible
+        if (!queryString || pokemon.innerText.toLowerCase().includes(queryString)) pokemon.style.display = "grid";
+        //eslse they won't be shown on the page 
+        else pokemon.style.display = "none";
+    })
+    console.log(queryString)
+}
+const inputPokemon = document.querySelector("input");
+inputPokemon.oninput = searchFunction;
  //function getAll (){
   //  return pokemonList;
 // } 
