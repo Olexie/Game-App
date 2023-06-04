@@ -1,6 +1,16 @@
 {
+  "name": "pokemon-js-app",
+  "version": "1.0.0",
+  "description": "Pokedex demo",
+  "devDependencies": {
+    "eslint": "^8.41.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "prettier": "2.8.8"
+  },
   "dependencies": {
     "eslint": "^8.41.0",
-    "gh-pages": "^5.0.0"
+    "gh-pages": "^5.0.0",
+    "minify": "^10.2.0"
   }
 }
